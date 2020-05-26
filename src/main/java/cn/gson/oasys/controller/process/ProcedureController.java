@@ -380,8 +380,10 @@ public class ProcedureController {
 				return "process/resserch";
 			}else if(("发文申请").equals(typename)) {
 				Resign eve = rsdao.findByProId(process);
+				drdao.findOne(user.getUserId());
 				model.addAttribute("eve", eve);
 				model.addAttribute("map", map);
+				//model.addAttribute("dr", dr);
 				System.out.println("-------------------");
 				System.out.println(eve);
 				System.out.println(map);
@@ -759,7 +761,7 @@ public class ProcedureController {
 			drdao.save(dr);
 			//存审核表
 			proservice.index7(shen, pro);
-			System.out.println("|||||||||||||||||||||||||||||||||||||||||||||||");
+			System.out.println("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
 			System.out.println(dr.getApprover());
 			System.out.println(pro);
 			System.out.println(val);

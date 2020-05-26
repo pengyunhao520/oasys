@@ -13,9 +13,9 @@ import java.util.List;
 public interface DocumentRegistrationDao extends PagingAndSortingRepository<DocumentRegistration,Long> {
     //List<DocumentRegistration> findById(Long id);
 
-    /*//根据模块名查找到类型集合
-    List<DocumentRegistration> findByTypeModel(String typeModel);
-*/
+    //根据模块名查找到类型集合
+    @Query("select d.drafter from document_registration where drafter= ")
+    List<DocumentRegistration> findByTypeDrafter(String drafter);
 
    /* @Query("select u.name from DocumentRegistration  where u.id=:id")
     String findname(Long id);*/

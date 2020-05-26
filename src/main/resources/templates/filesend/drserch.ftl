@@ -192,6 +192,16 @@ border-top: 1px solid #2196F3;
 						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red;color: red;" align="left">共印</td>
 						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red;color: red;" align="right">份</td>
 					</tr>
+					<tr>
+						<td>
+							<div class="pull-right foot">
+								<a class="btn btn-default fault fa-back" href="javascript:" id="content" >
+									<span class="glyphicon glyphicon-chevron-left"></span>查看文件内容</a>
+							</div>
+						</td>
+
+					</tr>
+
 					<tr class="top">
 						<td colspan="14" class="wi "><div class="bottom" ><label class="control-label font">审批意见</label></div></td>
 					</tr>
@@ -496,7 +506,6 @@ border-top: 1px solid #2196F3;
 </div>
 <script>
 	$(function(){
-	
 		$('.yulan').popover({
     		html:true,
     		placement:'auto right',
@@ -505,4 +514,9 @@ border-top: 1px solid #2196F3;
     		+'<h3 class="popover-title"></h3><div><img src="show/${(map.filepath)!''}"style="max-width: 200px;"/></div><div class="popover-content"></div></div>'
     	})
 	});
+
+	$("#content").click(function(){
+		alert("fdd")
+	});
+
 </script>

@@ -151,6 +151,11 @@
 							<td  colspan="6"><input id="archiving" type="text" class="form-control inpu" name="archiving" value="${(dr.archiving)!''}"/></td>
 						</tr>
 						<tr >
+
+							<td class="title" ><label class="control-label">文件内容</label></td>
+							<td  colspan="6"><textarea class="form-control text" name="content"></textarea></td>
+						</tr>
+						<tr >
 							<td colspan="14" style="text-align: right;" >
 								<input   type="text" class="days" name="proId.procseeDays" hidden="hidden"/>
 								<input   type="text" value="发文申请" name="val" hidden="hidden"/>

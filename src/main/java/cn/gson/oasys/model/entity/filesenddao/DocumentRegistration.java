@@ -41,8 +41,12 @@ public class DocumentRegistration {
     private String title;
     //归档号
     private int filingno;
+
     //归档情况
     private String archiving;
+
+    //文件内容
+    private String content;
 
     @OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name="pro_id")
@@ -161,6 +165,14 @@ public class DocumentRegistration {
         this.proId = proId;
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     @Override
     public String toString() {
         return "DocumentRegistrationDao{" +
@@ -178,6 +190,7 @@ public class DocumentRegistration {
                 ", filingno=" + filingno +
                 ", archiving='" + archiving + '\'' +
                 ", proId='" + proId + '\'' +
+                ", content='" + content + '\'' +
                 '}';
     }
 

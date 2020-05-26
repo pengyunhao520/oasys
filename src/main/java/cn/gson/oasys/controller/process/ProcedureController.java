@@ -762,6 +762,7 @@ public class ProcedureController {
 			//存审核表
 			proservice.index7(shen, pro);
 			System.out.println("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
+			System.out.println("--------------------------------------------");
 			System.out.println(dr.getApprover());
 			System.out.println(pro);
 			System.out.println(val);

@@ -29,5 +29,7 @@ public interface ProcessListDao extends PagingAndSortingRepository<ProcessList, 
 
 	@Query("select pro from ProcessList as pro where pro.userId.userId=?1 and pro.processId=?2")
 	ProcessList findbyuseridandtitle(Long userid,Long proid);
-	
+
+	@Query(nativeQuery = true,value="select max(a.process_id) from aoa_process_list as a")
+	Long findMaxId();
 }

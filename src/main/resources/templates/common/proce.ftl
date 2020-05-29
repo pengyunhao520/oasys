@@ -54,12 +54,14 @@
 		<div class="modal-content">
 			<div class="modal-body modal-error">
 				<div class="icon">
-					<span class="glyphicon glyphicon-remove"></span>
+					<span class="glyphicon glyphicon-ok"></span>
 				</div>
 				<div class="modal-p">
-					<h2 style="text-align: center;">操作错误</h2>
+					<h2 style="text-align: center;"></h2>
 					<#if error??>
-						<p class="modal-error-mess">${error}别调皮，不要乱搞</p>
+						<p class="modal-error-mess">${error}操作失败</p>
+					<#elseif success??>
+						<p class="modal-error-mess">${success}</p>
 					<#else>
 						<p class="modal-error-mess">请合理选择审核人。</p>
 					</#if>

@@ -142,23 +142,23 @@ border-top: 1px solid #2196F3;
 				</p>
 				<table class="bo table" align="center" cellpadding="0" cellspacing="0">
 					<tr height="100">
-						<td width="350" colspan="4" style="border-right:#cccccc solid 1px; border-top:#cccccc solid 1px; border-bottom:#cccccc solid 1px; border-color: red; color: red;" valign="top">签发:${map.harryname}</td>
+						<td width="350" colspan="4" style="border-right:#cccccc solid 1px; border-top:#cccccc solid 1px; border-bottom:#cccccc solid 1px; border-color: red; color: red;" valign="top">签发:&nbsp;${dr.drafter}</td>
 						<td width="350" colspan="4" style="border-left:#cccccc solid 1px; border-top:#cccccc solid 1px; border-bottom:#cccccc solid 1px; border-color: red; color: red;" valign="top">送审:</td>
 					</tr>
 					<tr height="100">
 						<td width="50" colspan="5" style="border-right:#cccccc solid 1px; border-top:#cccccc solid 1px; border-bottom:#cccccc solid 1px; border-color: red; color: red;" valign="top">核稿:</td>
-						<td width="50" colspan="3" style="border-left:#cccccc solid 1px; border-top:#cccccc solid 1px; border-bottom:#cccccc solid 1px; border-color: red; color: red;" valign="top">主办单位和拟稿人:</td>
+						<td width="50" colspan="3" style="border-left:#cccccc solid 1px; border-top:#cccccc solid 1px; border-bottom:#cccccc solid 1px; border-color: red; color: red;" valign="top">主办单位和拟稿人:&nbsp;${dr.draftedby},${dr.drafter}</td>
 					</tr>
 					<tr height="60">
 						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red; color: red;">发文字号:</td>
 						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red;"></td>
-						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red; color: red;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</td>
+						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red; color: red;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${dr.documentno}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</td>
 						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red;"></td>
 						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red; color: red;">号</td>
-						<td width="50" colspan="3" style="border-bottom:#cccccc solid 1px; border-color: red;color: red;">机密程度:</td>
+						<td width="50" colspan="3" style="border-bottom:#cccccc solid 1px; border-color: red;color: red;">机密程度:&nbsp;${dr.secretlevel}</td>
 					</tr>
 					<tr height="60">
-						<td width="50" colspan="8" style="border-bottom:#cccccc solid 1px; border-color: #ff0000;color: red;">附&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;件:</td>
+						<td width="50" colspan="8" style="border-bottom:#cccccc solid 1px; border-color: #ff0000;color: red;">附&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;件:&nbsp;${dr.enclosure}</td>
 					</tr>
 					<tr height="60">
 						<td width="50" colspan="8" style="border-bottom:#cccccc solid 1px; border-color: #ff0000;color: red;">是&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由:</td>
@@ -167,7 +167,7 @@ border-top: 1px solid #2196F3;
 						<td width="50" colspan="8" style="border-bottom:#cccccc solid 1px; border-color: red;color: red;">主送机关:</td>
 					</tr>
 					<tr height="60">
-						<td width="50" colspan="8" style="border-bottom:#cccccc solid 1px; border-color: red;color: red;">主&nbsp;&nbsp;题&nbsp;&nbsp;词:</td>
+						<td width="50" colspan="8" style="border-bottom:#cccccc solid 1px; border-color: red;color: red;">主&nbsp;&nbsp;题&nbsp;&nbsp;词:&nbsp;${dr.title}</td>
 					</tr>
 					<tr height="60">
 						<td width="50" colspan="8" style="border-bottom:#cccccc solid 1px; border-color: red;color: red;">抄送机关:</td>
@@ -178,9 +178,9 @@ border-top: 1px solid #2196F3;
 						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red;color: red;"align="left">办公室</td>
 						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red;"></td>
 						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red;"></td>
-						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red;color: red;"align="right">年</td>
-						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red; color: red;"align="right">月</td>
-						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red; color: red;" align="right">日印发</td>
+						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red;color: red;"align="right">${year}年</td>
+						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red; color: red;"align="right">${month}月</td>
+						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red; color: red;" align="right">${day}日印发</td>
 					</tr>
 					<tr height="60">
 						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red;color: red;">打字:</td>
@@ -189,14 +189,17 @@ border-top: 1px solid #2196F3;
 						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red;color: red;">校对:</td>
 						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red;"></td>
 						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red;"></td>
-						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red;color: red;" align="left">共印</td>
-						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red;color: red;" align="right">份</td>
+						<#--<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red;color: red;" align="left"></td>-->
+						<td width="50" style="border-bottom:#cccccc solid 1px; border-color: red;color: red;" align="right">共印&nbsp;${dr.count}&nbsp;份</td>
 					</tr>
 					<tr>
 						<td>
 							<div class="pull-right foot">
-								<a class="btn btn-default fault fa-back" href="javascript:" id="content" >
-									<span class="glyphicon glyphicon-chevron-left"></span>查看文件内容</a>
+								<#--<a class="btn btn-default fault fa-back" href="javascript:" id="content" >
+									<span class="glyphicon glyphicon-chevron-left"></span>查看文件内容</a>-->
+								<!-- 按钮触发模态框 -->
+								<br></br>
+								<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">预览发文内容</button>
 							</div>
 						</td>
 
@@ -213,17 +216,24 @@ border-top: 1px solid #2196F3;
 										<td style="width:130px;text-align:center;background-color:#6d9eeb;">
 											<div class="mon">
 												<p style="height:20px;"></p>
-												<span>经理意见</span>
+												<span>第一审批人意见</span>
 											</div>
 										</td>
-										<td colspan="13"><p style="margin-top: 20px;font-size:16px;">${(emoney.managerAdvice)!''}</p></td>
+										<td>
+											<div class="radio">
+											<label><input type="radio" name="optradio">通过</label>
+											</div>
+											<div class="radio">
+												<label><input type="radio" name="optradio">拒绝</label>
+											</div>
+										</td>
 									</tr>
 
 									<tr>
 										<td style="width:130px;text-align:center;background-color:#6d9eeb;">
 											<div class="mon">
 												<p style="height:20px;"></p>
-												<span>财务经理意见</span>
+												<span>第二审批人意见</span>
 
 											</div>
 										</td>
@@ -250,256 +260,331 @@ border-top: 1px solid #2196F3;
 					</tr>
 
 				</table>
-			<#--	<table class="bo table ">
-			
-				<tr >
-					<td colspan="14" class="title"><h2>${map.typename}单</h2></td>
 
-				</tr>
-				<tr style="opacity: 0;">
-					<td colspan="14">11</td>
-				</tr>
-				<tr >
-					<td class="wi" style="width: 100px;" ><label class="control-label">标题</label></td>
-					<td colspan="7" class="underline" style="width:160px;"><div class="bottom" ><label class="control-label">${map.processName}</label></div></td>
-					<td class="css" style="width:30px;"></td>
+				<#--&lt;#&ndash;发文内容&ndash;&gt;
+				<div id="sendfile" hidden="true">
+					<p style="color: red; font-size: 52px; font-family: '宋体'; " align="center">
+						石首市中医医院文件
+					</p>
+					<table align="center" cellspacing="0">
+						<tr>
+							<td align="right" style="border-bottom:#cccccc solid 3px; border-color: red; ">石中医[2020]</td>
+							<td style="border-bottom:#cccccc solid 3px; border-color: red; ">6</td>
+							<td colspan="5" style="border-bottom:#cccccc solid 3px; border-color: red; ">号</td>
 
-					<td class="wi" style="width: 72px;"><label class="control-label">紧急程度</label></td>
-					<td colspan="4" class="underline" style="width: 60px;"><div class="bottom">${map.harryname}</div></td>
+						</tr>
+						<tr>
+							<td colspan="7" style="font-family: '宋体'; font-size: 30px;"><br />&nbsp;&nbsp;关于×××××××××××××××××××××××<br />×××的通知（宋体小二）</td>
+						</tr>
+						<tr height="300" align="left" valign="top">
+							<td colspan="7" width="600"><br /><textarea cols="80" rows="18" style="font-family: '宋体'; font-size: 20px;">各科室：
+	×××××××××××××××××××××××××× （仿宋小三）
+	</textarea></td>
+						</tr>
+						<tr style="font-family: '仿宋'; font-size: 15;">
+							<td>&nbsp;&nbsp;石首市中医医院办公室</td>
+							<td>2020</td>
+							<td>年</td>
+							<td>3</td>
+							<td>月</td>
+							<td>22</td>
+							<td>日印发</td>
+						</tr>
+					</table>
+				</div>-->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog" style="width: 80%">
+						<div class="modal-content">
+							<div>
+								<p style="color: red; font-size: 52px; font-family: '宋体'; " align="center">
+									石首市中医医院文件
+								</p>
+								<table align="center" cellspacing="0">
+									<tr>
+										<td align="right" style="border-bottom:#cccccc solid 3px; border-color: red; ">石中医[${dr.documentno}]</td>
+										<#--<td style="border-bottom:#cccccc solid 3px; border-color: red; ">6</td>-->
+										<td colspan="5" style="border-bottom:#cccccc solid 3px; border-color: red; ">号</td>
 
-				</tr>
-				<tr >
-					<td class="wi"  style="width: 100px;"><label class="control-label">提单人员</label></td>
-					<td  style="width:140px;"><div class="bottom">${map.username}</div></td>
-					<td class="css"style="width:30px;"></td>
-					<td class="wi" style="width:90px;"><label class="control-label">提单部门</label></td>
-					<td colspan="4" style="width:44px;"><div class="bottom">${map.deptname}</div></td>
-					<td class="css" style="width:30px;"></td>
-					<td class="wi"><label class="control-label">提单日期</label></td>
-					<td colspan="4" ><div class="bottom">${map.applytime}</div></td>
-
-				</tr>
-
-				<tr class="top ss">
-					<td colspan="14" class="wi "><div class="bottom" ><label class="control-label font">差旅信息</label></div></td>
-				</tr>
-
-				<tr class="rile two">
-					<td class="wi" style="width:100px;"><label class="control-label">开始日期</label></td>
-					<td  style="width:170px;"><div class="bottom">${map.startime}</div></td>
-					<td class="css"style="width:30px;"></td>
-					<td class="wi" style="width:90px;"><label class="control-label">结束日期</label></td>
-					<td colspan="4" style="width:108px;"><div class="bottom">${map.endtime}</div></td>
-					<td class="css" style="width:30px;"></td>
-					<td class="wi"><label class="control-label">出差天数</label></td>
-					<td colspan="4" ><div class="bottom">${(map.tianshu)!''}</div></td>
-				</tr>
-
-				<tr class="rile">
-					<td class="wi" style="width:100px;"><label class="control-label">相关客户</label></td>
-					<td  style="width:140px;"><div class="bottom">${(emoney.name)!''}</div></td>
-					<td class="css"style="width:30px;"></td>
-					<td class="wi" style="width:90px;"><label class="control-label">相关票据</label></td>
-
-					<td colspan="4" style="width:44px;"><div class="bottom">
-					<#if map.file!="file">
-							<#if map.filetype=="img">
-							<a href="javacript:void(0);" class="label xiugai yulan" title="图片预览">
-							<span class="glyphicon glyphicon-search"></span> 预览</a>
-							</#if>
-							<a href="file?fileid=${(map.file.attachmentId)!''}" class="label xiugai">
-							<span class="glyphicon glyphicon-search"></span> 下载</a>
-							</#if>
+									</tr>
+									<tr>
+										<td colspan="7" style="font-family: '宋体'; font-size: 30px;"><br />&nbsp;&nbsp;关于${dr.title}的通知（宋体小二）</td>
+									</tr>
+									<tr height="300" align="left" valign="top">
+										<td colspan="7" width="600"><br /><textarea readonly="readonly" cols="80" rows="18" style="font-family: '宋体'; font-size: 20px;">各科室：（仿宋小三）${dr.content}
+	</textarea></td>
+									</tr>
+									<tr style="font-family: '仿宋'; font-size: 15;">
+										<td>&nbsp;&nbsp;石首市中医医院办公室</td>
+										<td>${year}</td>
+										<td>年</td>
+										<td>${month}</td>
+										<td>月</td>
+										<td>${day}</td>
+										<td>日印发</td>
+									</tr>
+								</table>
 							</div>
-					</td>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+								</button>
+								<button type="button" class="btn btn-primary">
+									提交更改
+								</button>
+							</div>
+						</div><!-- /.modal-content -->
+					</div><!-- /.modal -->
+				</div>
 
-					<#if emoney.pro??>
-					<td class="css" style="width:30px;"></td>
-					<td class="wi"><label class="control-label">出差相关</label></td>
-					<td colspan="4" ><div class="bottom">
-						<a href="particular?id=${emoney.pro}&typename=出差申请" class="label xiugai">
-						<span class="glyphicon glyphicon-search"></span> 查看</a> </div></td>
-						<#else>
-						<td class="css" colspan="6"></td>
-					</#if>
-				</tr>
-				<tr class="top">
-					<td colspan="14" class="wi "><div class="bottom" ><label class="control-label font">差旅交通明细</label></div></td>
-				</tr>
-				<tr class="rile">
-					<td colspan="14" >
-					<div >
-						<table class="table inside">
-							<thead>
-								<tr>
-									 <th style="width: 57.6px;">序号</th>
-									 <th colspan="2" style="width: 96px;">出差人员</th>
-									 <th colspan="2" style="width: 193.6px;">出发日期</th>
-									 <th colspan="2" style="width: 193.6px;">出发城市</th>
-									 <th colspan="2" style="width: 96px;">到达城市</th>
-									 <th colspan="2" style="width: 96.8px;">交通工具</th>
-									 <th colspan="2" style="width: 96.8px;">座位类型</th>
-									 <th  class="mm" style="width: 121.6px;">交通标准</th>
-								</tr>
-							</thead>
-							<tbody class="tbody">
-							<#list tralist as tra>
-							<tr class="tr">
-									<td style="border-left: 0px ;"><span>${tra_index+1}</span></td>
-									<td colspan="2"><span>${tra.user.userName}</span></td>
-									<td colspan="2"><span>${tra.departTime}</span></td>
-									<td colspan="2"><span>${tra.departName}</span></td>
-									<td colspan="2"><span>${tra.reachName}</span></td>
-									<td colspan="2"><span>${tra.trafficName}</span></td>
-									<td colspan="2"><span>${tra.seatType}</span></td>
-									<td ><span>${tra.trafficMoney}</span></td>
+				<#--	<table class="bo table ">
 
-							</tr>
-							</#list>
-						   </tbody>
-						   <tfoot>
-						   	<tr>
-						   			<td><span>合计</span></td>
-									<td colspan="2"><span></span></td>
-									<td colspan="2"><span></span></td>
-									<td colspan="2"><span></span></td>
-									<td colspan="2"><span></span></td>
-									<td colspan="2"><span></span></td>
-									<td colspan="2"><span></span></td>
-									<td  class="mm"><span>${tramoney}</span></td>
-						   	</tr>
-						   </tfoot>
-						</table>
-					</div>
-					</td>
-				</tr>
-				<tr class="top">
-					<td colspan="14" class="wi "><div class="bottom" ><label class="control-label font">差旅住宿明细</label></div></td>
-				</tr>
-				<tr class="rile">
-					<td colspan="14" >
-					<div >
-						<table class="table inside">
-							<thead>
-								<tr>
-									 <th style="width: 57.6px;">序号</th>
-									 <th colspan="2" style="width: 96px;">出差人员</th>
-									 <th colspan="2" style="width: 193.6px;">入住日期</th>
-									 <th colspan="2" style="width: 193.6px;">离店日期</th>
-									 <th colspan="2" style="width: 96px;">入住城市</th>
-									 <th colspan="2" style="width: 96.8px;">入住酒店</th>
-									 <th colspan="2" style="width: 96.8px;">入住天数</th>
-									 <th  class="mm" style="width: 121.6px;">住宿标准/天</th>
-								</tr>
-							</thead>
-							<tbody class="tbody">
-							<#list staylist as stay>
-							<tr class="tr">
-									<td style="border-left: 0px ;"><span>${stay_index+1}</span></td>
-									<td colspan="2"><span>${stay.user.userName}</span></td>
-									<td colspan="2"><span>${stay.stayTime}</span></td>
-									<td colspan="2"><span>${stay.leaveTime}</span></td>
-									<td colspan="2"><span>${stay.stayCity}</span></td>
-									<td colspan="2"><span>${stay.hotelName}</span></td>
-									<td colspan="2"><span>${stay.day}</span></td>
-									<td ><span>${stay.stayMoney}</span></td>
+                    <tr >
+                        <td colspan="14" class="title"><h2>${map.typename}单</h2></td>
 
-							</tr>
-							</#list>
-						   </tbody>
-						   <tfoot>
-						   	<tr>
-						   			<td><span>合计</span></td>
-									<td colspan="2"><span></span></td>
-									<td colspan="2"><span></span></td>
-									<td colspan="2"><span></span></td>
-									<td colspan="2"><span></span></td>
-									<td colspan="2"><span></span></td>
-									<td colspan="2"><span></span></td>
-									<td  class="mm"><span>${staymoney}</span></td>
-						   	</tr>
-						   </tfoot>
-						</table>
-					</div>
-					</td>
-				</tr>
-				<tr class="rile" style="height:70px;">
-					<td colspan="14"  >
-						<div  class="out">
-							<table class="table ob ">
-								<tr>
-									<td style="width:130px;text-align:center;background-color:#6d9eeb;">
-										<div class="mon">
-											<p style="height:10px;"></p>
-											<span>合计金额</span>
-											<br>
-											<span>(大写)</span>
-										</div>
-									</td>
-									<td colspan="13"><p style="margin-top: 20px;font-size:16px;">${(allmoney)!''}</p></td>
-								</tr>
+                    </tr>
+                    <tr style="opacity: 0;">
+                        <td colspan="14">11</td>
+                    </tr>
+                    <tr >
+                        <td class="wi" style="width: 100px;" ><label class="control-label">标题</label></td>
+                        <td colspan="7" class="underline" style="width:160px;"><div class="bottom" ><label class="control-label">${map.processName}</label></div></td>
+                        <td class="css" style="width:30px;"></td>
 
-								<tr>
-									<td style="width:130px;text-align:center;background-color:#6d9eeb;">
-										<div class="mon">
-											<p style="height:20px;"></p>
-											<span>报销事由</span>
+                        <td class="wi" style="width: 72px;"><label class="control-label">紧急程度</label></td>
+                        <td colspan="4" class="underline" style="width: 60px;"><div class="bottom">${map.harryname}</div></td>
 
-										</div>
-									</td>
-									<td colspan="13"><p style="margin-top: 20px;font-size:16px;">${(map.processDescribe)!''}</p></td>
-								</tr>
-							</table>
-						</div>
-					</td>
-				</tr>
-				<tr class="top">
-					<td colspan="14" class="wi "><div class="bottom" ><label class="control-label font">审批意见</label></div></td>
-				</tr>
-				<tr class="rile" style="height:70px;">
-					<td colspan="14"  >
-						<div  class="out">
-							<table class="table ob ">
-								<tr>
-									<td style="width:130px;text-align:center;background-color:#6d9eeb;">
-										<div class="mon">
-											<p style="height:20px;"></p>
-											<span>经理意见</span>
-										</div>
-									</td>
-									<td colspan="13"><p style="margin-top: 20px;font-size:16px;">${(emoney.managerAdvice)!''}</p></td>
-								</tr>
+                    </tr>
+                    <tr >
+                        <td class="wi"  style="width: 100px;"><label class="control-label">提单人员</label></td>
+                        <td  style="width:140px;"><div class="bottom">${map.username}</div></td>
+                        <td class="css"style="width:30px;"></td>
+                        <td class="wi" style="width:90px;"><label class="control-label">提单部门</label></td>
+                        <td colspan="4" style="width:44px;"><div class="bottom">${map.deptname}</div></td>
+                        <td class="css" style="width:30px;"></td>
+                        <td class="wi"><label class="control-label">提单日期</label></td>
+                        <td colspan="4" ><div class="bottom">${map.applytime}</div></td>
 
-								<tr>
-									<td style="width:130px;text-align:center;background-color:#6d9eeb;">
-										<div class="mon">
-											<p style="height:20px;"></p>
-											<span>财务经理意见</span>
+                    </tr>
 
-										</div>
-									</td>
-									<td colspan="13"><p style="margin-top: 20px;font-size:16px;">${(emoney.financialAdvice)!''}</p></td>
-								</tr>
-							</table>
-						</div>
-					</td>
-				</tr>
-				<tr class="fo">
+                    <tr class="top ss">
+                        <td colspan="14" class="wi "><div class="bottom" ><label class="control-label font">差旅信息</label></div></td>
+                    </tr>
 
-					<td colspan="14" style="text-align: right;" >
-						<div class="pull-right foot">
-							<a class="btn btn-default fault fa-back" href="javascript:" onclick="history.back(); ">
-								 <span class="glyphicon glyphicon-chevron-left"></span> 返回</a>
-							<a class="btn btn-default fault" onclick="javascript:window.print();">
-			   					<span class="glyphicon glyphicon glyphicon-print"></span> 打印</a>
-			   				<#if map.name="审核">
-							<a class="btn btn-primary huifu" href="auditing?id=${map.proId}">
-							<span class="glyphicon glyphicon-zoom-in"></span> 审核</a>
-							</#if>
-						</div>
-				 </td>
-				</tr>
-				</table>-->
+                    <tr class="rile two">
+                        <td class="wi" style="width:100px;"><label class="control-label">开始日期</label></td>
+                        <td  style="width:170px;"><div class="bottom">${map.startime}</div></td>
+                        <td class="css"style="width:30px;"></td>
+                        <td class="wi" style="width:90px;"><label class="control-label">结束日期</label></td>
+                        <td colspan="4" style="width:108px;"><div class="bottom">${map.endtime}</div></td>
+                        <td class="css" style="width:30px;"></td>
+                        <td class="wi"><label class="control-label">出差天数</label></td>
+                        <td colspan="4" ><div class="bottom">${(map.tianshu)!''}</div></td>
+                    </tr>
+
+                    <tr class="rile">
+                        <td class="wi" style="width:100px;"><label class="control-label">相关客户</label></td>
+                        <td  style="width:140px;"><div class="bottom">${(emoney.name)!''}</div></td>
+                        <td class="css"style="width:30px;"></td>
+                        <td class="wi" style="width:90px;"><label class="control-label">相关票据</label></td>
+
+                        <td colspan="4" style="width:44px;"><div class="bottom">
+                        <#if map.file!="file">
+                                <#if map.filetype=="img">
+                                <a href="javacript:void(0);" class="label xiugai yulan" title="图片预览">
+                                <span class="glyphicon glyphicon-search"></span> 预览</a>
+                                </#if>
+                                <a href="file?fileid=${(map.file.attachmentId)!''}" class="label xiugai">
+                                <span class="glyphicon glyphicon-search"></span> 下载</a>
+                                </#if>
+                                </div>
+                        </td>
+
+                        <#if emoney.pro??>
+                        <td class="css" style="width:30px;"></td>
+                        <td class="wi"><label class="control-label">出差相关</label></td>
+                        <td colspan="4" ><div class="bottom">
+                            <a href="particular?id=${emoney.pro}&typename=出差申请" class="label xiugai">
+                            <span class="glyphicon glyphicon-search"></span> 查看</a> </div></td>
+                            <#else>
+                            <td class="css" colspan="6"></td>
+                        </#if>
+                    </tr>
+                    <tr class="top">
+                        <td colspan="14" class="wi "><div class="bottom" ><label class="control-label font">差旅交通明细</label></div></td>
+                    </tr>
+                    <tr class="rile">
+                        <td colspan="14" >
+                        <div >
+                            <table class="table inside">
+                                <thead>
+                                    <tr>
+                                         <th style="width: 57.6px;">序号</th>
+                                         <th colspan="2" style="width: 96px;">出差人员</th>
+                                         <th colspan="2" style="width: 193.6px;">出发日期</th>
+                                         <th colspan="2" style="width: 193.6px;">出发城市</th>
+                                         <th colspan="2" style="width: 96px;">到达城市</th>
+                                         <th colspan="2" style="width: 96.8px;">交通工具</th>
+                                         <th colspan="2" style="width: 96.8px;">座位类型</th>
+                                         <th  class="mm" style="width: 121.6px;">交通标准</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="tbody">
+                                <#list tralist as tra>
+                                <tr class="tr">
+                                        <td style="border-left: 0px ;"><span>${tra_index+1}</span></td>
+                                        <td colspan="2"><span>${tra.user.userName}</span></td>
+                                        <td colspan="2"><span>${tra.departTime}</span></td>
+                                        <td colspan="2"><span>${tra.departName}</span></td>
+                                        <td colspan="2"><span>${tra.reachName}</span></td>
+                                        <td colspan="2"><span>${tra.trafficName}</span></td>
+                                        <td colspan="2"><span>${tra.seatType}</span></td>
+                                        <td ><span>${tra.trafficMoney}</span></td>
+
+                                </tr>
+                                </#list>
+                               </tbody>
+                               <tfoot>
+                                   <tr>
+                                           <td><span>合计</span></td>
+                                        <td colspan="2"><span></span></td>
+                                        <td colspan="2"><span></span></td>
+                                        <td colspan="2"><span></span></td>
+                                        <td colspan="2"><span></span></td>
+                                        <td colspan="2"><span></span></td>
+                                        <td colspan="2"><span></span></td>
+                                        <td  class="mm"><span>${tramoney}</span></td>
+                                   </tr>
+                               </tfoot>
+                            </table>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr class="top">
+                        <td colspan="14" class="wi "><div class="bottom" ><label class="control-label font">差旅住宿明细</label></div></td>
+                    </tr>
+                    <tr class="rile">
+                        <td colspan="14" >
+                        <div >
+                            <table class="table inside">
+                                <thead>
+                                    <tr>
+                                         <th style="width: 57.6px;">序号</th>
+                                         <th colspan="2" style="width: 96px;">出差人员</th>
+                                         <th colspan="2" style="width: 193.6px;">入住日期</th>
+                                         <th colspan="2" style="width: 193.6px;">离店日期</th>
+                                         <th colspan="2" style="width: 96px;">入住城市</th>
+                                         <th colspan="2" style="width: 96.8px;">入住酒店</th>
+                                         <th colspan="2" style="width: 96.8px;">入住天数</th>
+                                         <th  class="mm" style="width: 121.6px;">住宿标准/天</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="tbody">
+                                <#list staylist as stay>
+                                <tr class="tr">
+                                        <td style="border-left: 0px ;"><span>${stay_index+1}</span></td>
+                                        <td colspan="2"><span>${stay.user.userName}</span></td>
+                                        <td colspan="2"><span>${stay.stayTime}</span></td>
+                                        <td colspan="2"><span>${stay.leaveTime}</span></td>
+                                        <td colspan="2"><span>${stay.stayCity}</span></td>
+                                        <td colspan="2"><span>${stay.hotelName}</span></td>
+                                        <td colspan="2"><span>${stay.day}</span></td>
+                                        <td ><span>${stay.stayMoney}</span></td>
+
+                                </tr>
+                                </#list>
+                               </tbody>
+                               <tfoot>
+                                   <tr>
+                                           <td><span>合计</span></td>
+                                        <td colspan="2"><span></span></td>
+                                        <td colspan="2"><span></span></td>
+                                        <td colspan="2"><span></span></td>
+                                        <td colspan="2"><span></span></td>
+                                        <td colspan="2"><span></span></td>
+                                        <td colspan="2"><span></span></td>
+                                        <td  class="mm"><span>${staymoney}</span></td>
+                                   </tr>
+                               </tfoot>
+                            </table>
+                        </div>
+                        </td>
+                    </tr>
+                    <tr class="rile" style="height:70px;">
+                        <td colspan="14"  >
+                            <div  class="out">
+                                <table class="table ob ">
+                                    <tr>
+                                        <td style="width:130px;text-align:center;background-color:#6d9eeb;">
+                                            <div class="mon">
+                                                <p style="height:10px;"></p>
+                                                <span>合计金额</span>
+                                                <br>
+                                                <span>(大写)</span>
+                                            </div>
+                                        </td>
+                                        <td colspan="13"><p style="margin-top: 20px;font-size:16px;">${(allmoney)!''}</p></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="width:130px;text-align:center;background-color:#6d9eeb;">
+                                            <div class="mon">
+                                                <p style="height:20px;"></p>
+                                                <span>报销事由</span>
+
+                                            </div>
+                                        </td>
+                                        <td colspan="13"><p style="margin-top: 20px;font-size:16px;">${(map.processDescribe)!''}</p></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="top">
+                        <td colspan="14" class="wi "><div class="bottom" ><label class="control-label font">审批意见</label></div></td>
+                    </tr>
+                    <tr class="rile" style="height:70px;">
+                        <td colspan="14"  >
+                            <div  class="out">
+                                <table class="table ob ">
+                                    <tr>
+                                        <td style="width:130px;text-align:center;background-color:#6d9eeb;">
+                                            <div class="mon">
+                                                <p style="height:20px;"></p>
+                                                <span>经理意见</span>
+                                            </div>
+                                        </td>
+                                        <td colspan="13"><p style="margin-top: 20px;font-size:16px;">${(emoney.managerAdvice)!''}</p></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="width:130px;text-align:center;background-color:#6d9eeb;">
+                                            <div class="mon">
+                                                <p style="height:20px;"></p>
+                                                <span>财务经理意见</span>
+
+                                            </div>
+                                        </td>
+                                        <td colspan="13"><p style="margin-top: 20px;font-size:16px;">${(emoney.financialAdvice)!''}</p></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="fo">
+
+                        <td colspan="14" style="text-align: right;" >
+                            <div class="pull-right foot">
+                                <a class="btn btn-default fault fa-back" href="javascript:" onclick="history.back(); ">
+                                     <span class="glyphicon glyphicon-chevron-left"></span> 返回</a>
+                                <a class="btn btn-default fault" onclick="javascript:window.print();">
+                                       <span class="glyphicon glyphicon glyphicon-print"></span> 打印</a>
+                                   <#if map.name="审核">
+                                <a class="btn btn-primary huifu" href="auditing?id=${map.proId}">
+                                <span class="glyphicon glyphicon-zoom-in"></span> 审核</a>
+                                </#if>
+                            </div>
+                     </td>
+                    </tr>
+                    </table>-->
 			</div>
 		</div>
 	</div>

@@ -343,12 +343,18 @@ public class ProcessService {
 		
 		Reviewed re2=new  Reviewed();
 		re2.setProId(pro);
-		re2.setUserId(u2);
+		if (u2!=null){
+			re2.setUserId(u2);
+		}
 		re2.setStatusId(23L);
 		redao.save(re2);
 		
 		pro.getShenuser();
-		pro.setShenuser(pro.getShenuser()+";"+u2.getUserName());
+		if (u2!=null){
+			pro.setShenuser(pro.getShenuser()+";"+u2.getUserName());
+		}else {
+			pro.setShenuser(pro.getShenuser());
+		}
 		pro.setStatusId(24L);//改变主表的状态
 		prodao.save(pro);
 	}

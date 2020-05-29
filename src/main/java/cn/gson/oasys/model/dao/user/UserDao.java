@@ -12,6 +12,8 @@ import org.springframework.data.repository.query.Param;
 import cn.gson.oasys.model.entity.user.Dept;
 import cn.gson.oasys.model.entity.user.User;
 
+import javax.jnlp.ClipboardService;
+
 public interface UserDao extends JpaRepository<User, Long>{
     
 	List<User>  findByUserId(Long id);
@@ -68,4 +70,5 @@ public interface UserDao extends JpaRepository<User, Long>{
 	/*通过（用户名或者电话号码）+密码查找用户*/
 	@Query("from User u where (u.userName = ?1 or u.userTel = ?1) and u.password =?2")
 	User findOneUser(String userName,String password);
+
 }

@@ -14,7 +14,9 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import cn.gson.oasys.model.dao.filesenddao.DocumentRegistrationDao;
+import cn.gson.oasys.model.dao.user.DeptDao;
 import cn.gson.oasys.model.entity.filesenddao.DocumentRegistration;
+import cn.gson.oasys.model.entity.user.Dept;
 import cn.gson.oasys.model.entity.user.Unit;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -116,7 +118,9 @@ public class ProcedureController {
 	private AttendceDao adao;
 	@Autowired
 	private DocumentRegistrationDao drdao;
-	
+	@Autowired
+	private DeptDao deptDao;
+
 	@Value("${attachment.roopath}")
 	private String rootpath;
 	//新增页面
@@ -381,12 +385,33 @@ public class ProcedureController {
 			}else if(("发文申请").equals(typename)) {
 				Resign eve = rsdao.findByProId(process);
 				drdao.findOne(user.getUserId());
+				DocumentRegistration dr = drdao.findByProidl(proid);
 				model.addAttribute("eve", eve);
 				model.addAttribute("map", map);
-				//model.addAttribute("dr", dr);
+				model.addAttribute("dr", dr);
+				Date date = dr.getDate();
+				String year=String.format("%tY", date);
+				String month=String .format("%tm", date);
+				String day=String .format("%td", date);
+				model.addAttribute("year", year);
+				model.addAttribute("month", month);
+				model.addAttribute("day", day);
+				System.out.println(year);
+				System.out.println(month);
+				System.out.println(day);
+				List<DocumentRegistration> soli = drdao.findByApprover("soli");
+				System.out.println(soli);
+				System.out.println(proid);
+				System.out.println(proid.getClass().getName().toString());
+				DocumentRegistration byProId = drdao.findByProidl(proid);
+
+                //model.addAttribute("dr", dr);
 				System.out.println("-------------------");
-				System.out.println(eve);
-				System.out.println(map);
+				System.out.println(proid);
+				System.out.println(byProId);
+				System.out.println(dr);
+				System.out.println("eve:"+eve);
+				System.out.println("map"+map);
 				System.out.println(userId);
                 System.out.println(req);
 				return "filesend/drserch";
@@ -447,6 +472,7 @@ public class ProcedureController {
 		User u=udao.findOne(userId);
 		String name=null;
 		String typename=req.getParameter("type");
+		System.out.println(typename);
 		Long proid=Long.parseLong(req.getParameter("proId"));
 		
 		ProcessList pro=prodao.findOne(proid);//找到该条流程
@@ -483,7 +509,25 @@ public class ProcedureController {
 					model.addAttribute("error", "请选财务经理。");
 					return "common/proce";
 				}
-			}else{
+			}else if(("发文申请").equals(typename)){
+				DocumentRegistration proidl = drdao.findByProidl(proid);
+				System.out.println("one:"+proidl);
+				System.out.println(proid);
+				if (proidl!=null){
+					System.out.println("proid"+proid);
+					System.out.println("u"+u);
+					System.out.println("reviewed"+reviewed);
+					System.out.println("pro"+pro);
+					System.out.println("u2"+u2);
+					proservice.save(proid, u, reviewed, pro, u2);
+					System.out.println("aaaaaaaaaaaaaaa");
+					model.addAttribute("success", "操作成功");
+					return "common/proce";
+			   }
+                model.addAttribute("error", "请联系管理员");
+                return "common/proce";
+
+            } else{
 				if(u2.getPosition().getId().equals(7L)){
 					proservice.save(proid, u, reviewed, pro, u2);
 				}else{
@@ -518,7 +562,6 @@ public class ProcedureController {
 			
 			
 		}
-		
 		
 		if(("费用报销").equals(typename)){
 			Bursement  bu=budao.findByProId(pro);
@@ -758,21 +801,35 @@ public class ProcedureController {
 			pro.setDeeply(22L);
 			pro.setProcessName(dr.getTitle());
 			proservice.index5(pro, val, lu, enclosure,shen.getUserName());
-			drdao.save(dr);
-			//存审核表
-			proservice.index7(shen, pro);
-			System.out.println("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
+			User byUserName = udao.findByUserName(lu.getUserName());
+			Dept dept=byUserName.getDept();
+			System.out.println("dept"+dept);
+			//drdao.save(dr);
+			System.out.println("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
 			System.out.println("--------------------------------------------");
 			System.out.println(dr.getApprover());
 			System.out.println(pro);
+			System.out.println(pro.getProcessId());
+			System.out.println(pro.getUserId());
 			System.out.println(val);
 			System.out.println(enclosure);
 			System.out.println(lu);
 			System.out.println(shen);
 			System.out.println(dr);
+			Long processId = pro.getProcessId();
+			Long maxId = prodao.findMaxId();
+			System.out.println("max:"+maxId);
+			dr.setProidl(maxId+1);
+			dr.setDraftedby(dept.getDeptName());
+			if (dr.getEnclosure()==null){
+				dr.setEnclosure("无");
+			}
+			System.out.println(dr);
+			//存发文表
 			drdao.save(dr);
 			//存审核表
-			//proservice.index7(shen, pro);
+			proservice.index7(shen, pro);
+
 		}else{
 			return "common/proce";
 		}

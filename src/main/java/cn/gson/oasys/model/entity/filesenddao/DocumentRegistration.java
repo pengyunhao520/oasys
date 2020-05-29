@@ -15,9 +15,10 @@ import java.util.Date;
 @Entity
 @Table(name = "document_registration")
 public class DocumentRegistration {
+
+    //主键 编号
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    //主键 编号
     private Long id;
     //日期
     private Date date;
@@ -52,6 +53,7 @@ public class DocumentRegistration {
     @JoinColumn(name="pro_id")
     private ProcessList proId;
 
+    private Long proidl;
     public Long getId() {
         return id;
     }
@@ -173,6 +175,14 @@ public class DocumentRegistration {
         this.content = content;
     }
 
+    public Long getProidl() {
+        return proidl;
+    }
+
+    public void setProidl(Long proidl) {
+        this.proidl = proidl;
+    }
+
     @Override
     public String toString() {
         return "DocumentRegistrationDao{" +
@@ -191,6 +201,7 @@ public class DocumentRegistration {
                 ", archiving='" + archiving + '\'' +
                 ", proId='" + proId + '\'' +
                 ", content='" + content + '\'' +
+                ", proidl='" + proidl + '\'' +
                 '}';
     }
 
